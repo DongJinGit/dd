@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Home</h1>
+</body>
+<script>
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "http://localhost:8080/select", true);
+    xhttp.send();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            var obj = JSON.parse(xhttp.responseText);
+            alert(obj[2].id)
+        }
+    };
+</script>
+</html>
